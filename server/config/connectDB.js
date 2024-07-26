@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 
 async function connectDB(){
      try{
-        await mongoose.connect('mongodb+srv://varshneyshivam:shivam10@mydb.kfz1rck.mongodb.net/?retryWrites=true&w=majority&appName=MyDB');
+        await mongoose.connect(process.env.MONGODB_URI);
      const connection=mongoose.connection;
      
      connection.on('connected',()=>{
